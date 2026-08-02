@@ -1,6 +1,6 @@
 # local-linux-ai-lab
 
-> **Local Linux AI PowerShell & Bash Assistant With Air-Gapped MLOps Pipeline**
+> **Local Linux AI Bash command line Assistant With Air-Gapped MLOps Pipeline**
 
 An air-gapped, distro-aware AI Operations platform designed for Linux systems engineers, SREs, and MLOps practitioners. `local-linux-ai-lab` combines a multi-pod K3s sandboxed web shell, vector-backed RAG knowledge retrieval (ChromaDB), local AI command translation, and Jenkins/MLflow automation pipelines.
 
