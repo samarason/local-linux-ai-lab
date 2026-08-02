@@ -1,0 +1,85 @@
+{
+  "name": "local-linux-ai-lab",
+  "desktopName": "local-linux-ai-lab",
+  "description": "Distro-Aware AI Assistant & Local Linux AI Lab Workstation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": "Sverrir Arason <sverrir.arason@gmail.com>",
+  "homepage": "https://github.com/samarason/local-linux-ai-lab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samarason/local-linux-ai-lab.git"
+  },
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --log-override:empty-import-meta=silent --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "clean": "rm -rf dist server.js",
+    "lint": "tsc --noEmit",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:linux": "npm run build && electron-builder --linux",
+    "dist:all": "npm run build && electron-builder -wml",
+    "distro:win": "npm run build && electron-builder --win",
+    "distro:mac": "npm run build && electron-builder --mac",
+    "distro:linux": "npm run build && electron-builder --linux",
+    "distro:all": "npm run build && electron-builder -wml"
+  },
+  "build": {
+    "appId": "com.sverrir.locallinuxailab",
+    "productName": "local-linux-ai-lab",
+    "copyright": "Copyright © 2026 Sverrir Arason",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": [
+        "pkg",
+        "dmg"
+      ]
+    },
+    "linux": {
+      "category": "Development",
+      "executableName": "local-linux-ai-lab",
+      "target": [
+        "rpm",
+        "deb",
+        "AppImage"
+      ]
+    }
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3",
+    "express": "^4.21.2",
+    "dotenv": "^17.2.3",
+    "motion": "^12.23.24"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}

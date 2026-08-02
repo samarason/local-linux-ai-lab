@@ -1,0 +1,6 @@
+{
+  "name": "Distro-Aware AI Linux Assistant & MLOps Pipeline",
+  "description": "Air-gapped dual-pane Linux assistant with distro-aware RAG, Debian/RedHat container sandbox terminal, and MLOps pipeline orchestration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
